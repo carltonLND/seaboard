@@ -1,0 +1,13 @@
+{
+  "name": "eslint-config-custom",
+  "license": "MIT",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "clean": "rimraf ./dist ./node_modules"
+  },
+  "devDependencies": {
+    "eslint-config-turbo": "^1.10.12",
+    "rimraf": "^3.0.2"
+  }
+}
