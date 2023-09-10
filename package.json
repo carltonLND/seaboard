@@ -1,4 +1,5 @@
 {
+  "name": "seaboard",
   "private": true,
   "scripts": {
     "build": "turbo run build",
@@ -12,10 +13,8 @@
     "eslint": "^8.48.0",
     "prettier": "^3.0.3",
     "syncpack": "^11.2.1",
-    "tsconfig": "workspace:*",
     "turbo": "latest",
     "rimraf": "^3.0.2"
   },
-  "packageManager": "pnpm@8.6.10",
-  "name": "seaboard"
+  "packageManager": "pnpm@8.6.10"
 }

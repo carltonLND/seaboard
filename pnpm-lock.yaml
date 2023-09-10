@@ -20,9 +20,6 @@ importers:
       syncpack:
         specifier: ^11.2.1
         version: 11.2.1
-      tsconfig:
-        specifier: workspace:*
-        version: link:config/tsconfig
       turbo:
         specifier: latest
         version: 1.10.13
