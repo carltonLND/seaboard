@@ -1,0 +1,10 @@
+# Dirs
+dist
+build
+coverage
+
+# Files
+yarn.lock
+
+**/*.log
+

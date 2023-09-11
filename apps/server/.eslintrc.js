@@ -1,3 +1,3 @@
 module.exports = {
-    extends: ["custom/base"],
-};
+  extends: ["custom/base"],
+}

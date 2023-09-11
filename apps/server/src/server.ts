@@ -1,45 +1,45 @@
-import cors from "cors";
-import dotenv from "dotenv";
-import express from "express";
-import { Client } from "pg";
-import { getEnvVarOrFail } from "./support/envVarUtils";
-import { setupDBClientConfig } from "./support/setupDBClientConfig";
+import cors from "cors"
+import dotenv from "dotenv"
+import express from "express"
+import { Client } from "pg"
+import { getEnvVarOrFail } from "./support/envVarUtils"
+import { setupDBClientConfig } from "./support/setupDBClientConfig"
 
-dotenv.config();
+dotenv.config()
 
-const dbClientConfig = setupDBClientConfig();
-const client = new Client(dbClientConfig);
+const dbClientConfig = setupDBClientConfig()
+const client = new Client(dbClientConfig)
 
-const app = express();
+const app = express()
 
-app.use(express.json());
-app.use(cors());
+app.use(express.json())
+app.use(cors())
 
 app.get("/", async (_req, res) => {
-  res.json({ msg: "Hello! There's nothing interesting for GET /" });
-});
+  res.json({ msg: "Hello! There's nothing interesting for GET /" })
+})
 
 app.get("/health-check", async (_req, res) => {
   try {
-    await client.query("select now()");
-    res.status(200).send("system ok");
+    await client.query("select now()")
+    res.status(200).send("system ok")
   } catch (error) {
-    console.error(error);
-    res.status(500).send("An error occurred. Check server logs.");
+    console.error(error)
+    res.status(500).send("An error occurred. Check server logs.")
   }
-});
+})
 
-connectToDBAndStartListening();
+connectToDBAndStartListening()
 
 async function connectToDBAndStartListening() {
-  console.log("Attempting to connect to db");
-  await client.connect();
-  console.log("Connected to db!");
+  console.log("Attempting to connect to db")
+  await client.connect()
+  console.log("Connected to db!")
 
-  const port = getEnvVarOrFail("PORT");
+  const port = getEnvVarOrFail("PORT")
   app.listen(port, () => {
     console.log(
-      `Server started listening for HTTP requests on port ${port}.  Let's go!`,
-    );
-  });
+      `Server started listening for HTTP requests on port ${port}.  Let's go!`
+    )
+  })
 }

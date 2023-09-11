@@ -1,3 +1,3 @@
 export interface Task {
-  id: number;
+  id: number
 }
