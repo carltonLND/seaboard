@@ -1,3 +1,7 @@
+# build
+dist
+build
+
 # dependencies
 node_modules
 .pnp
