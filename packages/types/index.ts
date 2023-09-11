@@ -1,1 +1,1 @@
-export { type Task } from "./task";
+export * from "./task";
